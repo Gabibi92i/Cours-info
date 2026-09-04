@@ -23,3 +23,5 @@ aujourd’hui | candidature s01 : envoyée / attente | |
 - mettre une carte bancaire
 - « essai 14 jours puis 20 $ »
 - un outil que je ne peux pas ouvrir à l’école
+
+bonjour
