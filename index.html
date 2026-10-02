@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gabriel Siegenthaler — M291</title>
+  <meta name="description" content="Page de profil du module M291, développement d'interfaces UI. Médiamaticien CFC 3e année.">
+  <style>
+    :root {
+      --fond: #FBFAF8;
+      --carte: #FFFFFF;
+      --bord: #E6E3DE;
+      --txt: #1A1714;
+      --gris: #6E675F;
+      --accent: #B4472F;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --fond: #14120F; --carte: #1D1A16; --bord: #2E2A25;
+        --txt: #F2EFEA; --gris: #A49C92; --accent: #E07055;
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      background: var(--fond); color: var(--txt);
+      line-height: 1.6; padding: 56px 16px 80px;
+    }
+    .page { max-width: 680px; margin: 0 auto; }
+
+    header { border-bottom: 2px solid var(--txt); padding-bottom: 20px; margin-bottom: 36px; }
+    h1 { font-size: clamp(28px, 7vw, 40px); letter-spacing: -1px; line-height: 1.1; }
+    .role { color: var(--gris); font-size: 15px; margin-top: 8px; }
+
+    h2 {
+      font-size: 12px; text-transform: uppercase; letter-spacing: 1.4px;
+      color: var(--gris); margin: 40px 0 14px; font-weight: 700;
+    }
+    p { margin-bottom: 14px; }
+    .intro { font-size: 17px; }
+
+    .projet {
+      background: var(--carte); border: 1px solid var(--bord);
+      border-left: 4px solid var(--accent); border-radius: 6px;
+      padding: 20px 22px;
+    }
+    .projet h3 { font-size: 20px; letter-spacing: -0.3px; margin-bottom: 6px; }
+    .projet p  { color: var(--gris); margin-bottom: 0; font-size: 15px; }
+
+    ul.liens { list-style: none; display: flex; flex-direction: column; gap: 1px; }
+    ul.liens li { border-bottom: 1px solid var(--bord); }
+    ul.liens a {
+      display: flex; justify-content: space-between; align-items: center; gap: 14px;
+      padding: 13px 4px; color: var(--txt); text-decoration: none; min-height: 44px;
+    }
+    ul.liens a:hover { color: var(--accent); }
+    ul.liens a:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+    ul.liens .quoi { font-weight: 600; font-size: 15px; }
+    ul.liens .sem  { color: var(--gris); font-size: 12.5px; white-space: nowrap; }
+
+    footer {
+      margin-top: 52px; padding-top: 20px; border-top: 1px solid var(--bord);
+      color: var(--gris); font-size: 13px;
+    }
+    footer a { color: var(--accent); }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <header>
+      <h1>Gabriel Siegenthaler</h1>
+      <p class="role">Médiamaticien CFC, 3<sup>e</sup> année — options web et création d'entreprise</p>
+    </header>
+
+    <p class="intro">
+      J'ai choisi la médiamatique parce que c'est une des rares formations qui n'oblige pas à
+      choisir entre créer et construire. Ce qui m'intéresse, c'est de prendre une idée et de
+      l'amener jusqu'au bout : la penser, lui donner une forme, la mettre en ligne.
+    </p>
+    <p>
+      À côté de l'école, mon activité principale est la <strong>photographie</strong>. C'est aussi
+      de là que vient le sujet de mon projet de semestre.
+    </p>
+
+    <h2>Projet du semestre</h2>
+    <div class="projet">
+      <h3>Déclic</h3>
+      <p>
+        Suivre chaque shooting photo de la première demande du client jusqu'au paiement, pour
+        qu'aucune commande ne reste oubliée sur une carte mémoire.
+      </p>
+    </div>
+
+    <h2>Les rendus du module</h2>
+    <ul class="liens">
+      <li><a href="Kit-IA.md"><span class="quoi">Mon kit IA</span><span class="sem">semaine 2</span></a></li>
+      <li><a href="predictions.md"><span class="quoi">Prédis avant de cliquer</span><span class="sem">semaine 4</span></a></li>
+      <li><a href="compteur.html"><span class="quoi">Le compteur réparé</span><span class="sem">semaine 4</span></a></li>
+      <li><a href="bug.md"><span class="quoi">Les 3 bugs, expliqués</span><span class="sem">semaine 4</span></a></li>
+      <li><a href="predictions-caisse.md"><span class="quoi">La caisse du kiosque</span><span class="sem">semaine 4</span></a></li>
+      <li><a href="design/roast-grille.md"><span class="quoi">Roast d'une interface</span><span class="sem">semaine 5</span></a></li>
+      <li><a href="design/pitch.md"><span class="quoi">Pitch de Déclic</span><span class="sem">semaine 6</span></a></li>
+      <li><a href="design/persona.md"><span class="quoi">Persona de référence</span><span class="sem">semaine 7</span></a></li>
+      <li><a href="design/user-flow.md"><span class="quoi">User flow</span><span class="sem">semaine 7</span></a></li>
+      <li><a href="brief.md"><span class="quoi">Brief — spécification</span><span class="sem">semaine 7</span></a></li>
+      <li><a href="design/critique.md"><span class="quoi">Critique des 3 designs</span><span class="sem">semaine 7</span></a></li>
+    </ul>
+
+    <footer>
+      ICT 291 — Développement d'interfaces UI · CPNV · classe C2b<br>
+      Dépôt : <a href="https://github.com/Gabibi92i/Cours-info">github.com/Gabibi92i/Cours-info</a>
+    </footer>
+
+  </div>
+</body>
+</html>
