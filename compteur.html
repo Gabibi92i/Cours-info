@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Compteur — version réparée</title>
+
+  <!-- CORRECTION 1 : le script était ici, sans defer.
+       Il s'exécutait avant que le HTML existe, donc getElementById renvoyait null.
+       "defer" attend que la page soit construite avant d'exécuter le script. -->
+  <script src="compteur.js" defer></script>
+
+  <style>
+    :root {
+      --fond: #F6F7F9;
+      --carte: #FFFFFF;
+      --bord: #E3E6EA;
+      --txt: #14181D;
+      --gris: #6B7480;
+      --accent: #2B5BD7;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      background: #F6F7F9; color: var(--txt);
+      min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      padding: 24px;
+    }
+    .carte {
+      background: var(--carte); border: 1px solid #E3E6EA; border-radius: 14px;
+      padding: 32px 28px; width: 100%; max-width: 340px; text-align: center;
+    }
+    h1 { font-size: 17px; font-weight: 600; margin-bottom: 4px; }
+    .aide { font-size: 12.5px; color: var(--gris); margin-bottom: 24px; }
+    .valeur {
+      font-size: 64px; font-weight: 700; letter-spacing: -2px;
+      line-height: 1; margin-bottom: 6px; font-variant-numeric: tabular-nums;
+    }
+    .etat { font-size: 12px; color: var(--gris); min-height: 18px; margin-bottom: 22px; }
+    .boutons { display: flex; gap: 10px; justify-content: center; }
+    button {
+      font: inherit; font-size: 20px; font-weight: 600;
+      width: 56px; height: 56px; border-radius: 12px; cursor: pointer;
+      border: 1px solid #E3E6EA; background: #fff; color: var(--txt);
+    }
+    button:hover:not(:disabled) { background: #F0F2F5; }
+    button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+    button:disabled { opacity: .4; cursor: not-allowed; }
+    #plus { background: var(--accent); border-color: var(--accent); color: #fff; }
+    #plus:hover { background: #2450BE; }
+    #remise { width: auto; padding: 0 18px; font-size: 14px; font-weight: 500; color: var(--gris); }
+  </style>
+</head>
+<body>
+  <main class="carte">
+    <h1>Compteur</h1>
+    <p class="aide">Exercice « l'IA a tort » — version réparée</p>
+
+    <!-- aria-live : le lecteur d'écran annonce la nouvelle valeur à chaque changement -->
+    <p class="valeur" id="affichage" aria-live="polite">0</p>
+    <p class="etat" id="etat"></p>
+
+    <div class="boutons">
+      <button id="moins" type="button" aria-label="Diminuer de 1">−</button>
+      <button id="plus"  type="button" aria-label="Augmenter de 1">+</button>
+      <button id="remise" type="button">Remise à zéro</button>
+    </div>
+  </main>
+</body>
+</html>
