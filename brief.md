@@ -113,8 +113,12 @@ Décidée après comparaison de trois propositions — voir [design/critique.md]
 
 - **Ton :** outil d'atelier, pas tableau de bord d'entreprise. Le vocabulaire est celui de Nora
   (« shooting », « livré », « payé »), jamais « lead » ou « pipeline ».
-- **Couleur :** une seule couleur d'accent, réservée à l'action principale et à l'état « en retard ».
-  Tout le reste est neutre. L'information « en retard » n'est **jamais** portée par la couleur seule.
+- **Couleur :** **une couleur, un sens.** L'encre `#17191C` porte le texte et l'action principale ;
+  le rouge brique `#B3261E` ne sert **qu'**au retard ; le gris foncé porte la progression normale ;
+  le laiton est purement décoratif. Tout le reste est neutre, et l'information « en retard » n'est
+  **jamais** portée par la couleur seule.
+  *(Corrigé après l'itération 1 : ce point disait d'abord « une seule couleur pour l'action et le
+  retard », ce qui contredisait la critique comparative — voir [design/iteration.md](design/iteration.md).)*
 - **Typographie :** deux tailles de titre, une taille de corps, un seul niveau de gris secondaire.
 - **Contraste :** minimum 4.5:1 sur tout texte, parce que Nora lit en extérieur.
 - **Cibles tactiles :** 44 × 44 px minimum, action principale atteignable au pouce.

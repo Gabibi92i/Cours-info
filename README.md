@@ -58,6 +58,10 @@ qu'aucune commande ne reste oubliée sur une carte mémoire.
 | [`design/propositions/`](design/propositions) | s7 | Les 3 propositions de design générées |
 | [`design/critique.md`](design/critique.md) | s7 | Critique comparative et choix final |
 | [`brief.md`](brief.md) | s7 | Spécification officielle du projet |
+| [`design/accessibilite.md`](design/accessibilite.md) | s8 | Passe d'accessibilité, contrastes et cibles mesurés |
+| [`design/iteration.md`](design/iteration.md) | s8 | Ce qui a changé après le choix, et pourquoi |
+| [`design/iteration/`](design/iteration) | s8 | La v2 et la planche avant/après |
+| [`design/tests.md`](design/tests.md) | s8 | Protocole de tests utilisateurs et résultats |
 
 ## Journal IA
 
