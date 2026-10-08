@@ -164,16 +164,30 @@ console.log(compteur);
 
 | | |
 |---|---|
-| **Prédiction d'un camarade** _(à compléter : prénom)_ | _(à compléter)_ |
+| **Prédiction de Zinedine** | `0` |
 | **Ma prédiction** | `"011"` |
 | **Résultat réel** | `"011"` |
+| **Verdict** | ❌ faux pour lui, ✅ juste pour moi — mais seulement parce que j'étais déjà tombé dedans |
 
 **Pourquoi j'ai choisi cet extrait.** Parce que je suis tombé dedans pour de vrai dans
 [compteur.html](compteur.html) : la valeur venait du HTML, donc c'était du texte, et mon compteur
 affichait `011` au lieu de `2`. Voir [bug.md](bug.md).
 
+**Ce que la réponse de Zinedine montre.** Il répond `0`, c'est-à-dire la valeur de départ. Les deux
+lignes du milieu ne lui ont pas paru capables de changer quoi que ce soit — soit parce qu'il a lu
+la déclaration et pas la suite, soit parce qu'« ajouter 1 à du texte » ne ressemble pas à une
+opération valide, donc il a supposé que ça ne faisait rien.
+
+Son erreur est intéressante parce qu'elle n'est pas celle qu'on attend. L'erreur courante, c'est de
+répondre `2` — on croit à une addition. Lui répond `0` — il croit qu'il ne se passe rien. Deux
+intuitions opposées, et **ni l'une ni l'autre ne donne `"011"`**.
+
+Si j'ai trouvé juste, ce n'est pas par raisonnement : c'est parce que j'avais déjà vu ce `011`
+s'afficher dans mon propre compteur. Sans ça, j'aurais répondu `2` comme tout le monde.
+
 **Ce qui le rend traître.** Il n'y a pas d'erreur, pas de message rouge, rien dans la console. Le
-code « marche » — il fait juste autre chose que ce que je croyais.
+code « marche » — il fait juste autre chose que ce que l'on croit. C'est exactement pour ça que le
+seul moyen de s'en sortir est de prédire puis de vérifier.
 
 ---
 

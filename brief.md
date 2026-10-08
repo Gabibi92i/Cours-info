@@ -86,6 +86,10 @@ Je le note ici pour pouvoir le montrer quand la tentation reviendra :
 - pas de synchronisation d'agenda ;
 - pas de comptes utilisateurs ni de mots de passe.
 
+**Une exception, ajoutée après la revue croisée** (voir point 12) : l'app ne *envoie* rien, mais
+elle **prépare** le message de relance et le copie dans le presse-papier. Nora le colle elle-même
+dans sa messagerie. Le besoin est couvert sans service externe ni clé d'API.
+
 ## 8. Contraintes techniques (cahier des charges du cours)
 
 | Exigence | Comment je la remplis dans Déclic |
@@ -93,7 +97,7 @@ Je le note ici pour pouvoir le montrer quand la tentation reviendra :
 | JSON personnel ≥ 30 entrées, chargé avec `fetch` | `data/shootings.json`, 32 fiches de shootings |
 | Recherche ou filtre | Recherche par client **et** filtre par étape |
 | Formulaire validé, messages soignés (pas d'`alert`) | Message d'erreur affiché sous chaque champ fautif |
-| ≥ 3 micro-interactions | Carte qui s'enfonce au toucher · frise qui avance · bandeau « Annuler » · surbrillance de la nouvelle fiche |
+| ≥ 3 micro-interactions | Carte qui s'enfonce au toucher · frise qui avance · bandeau « Annuler » · surbrillance de la nouvelle fiche · confirmation « Message copié » |
 | Responsive | Conçu pour 375 px d'abord, puis élargi |
 | Icônes SVG | Jeu d'icônes dessiné en SVG inline, aucune police d'icônes |
 | GitHub Pages | Publié depuis ce dépôt |
@@ -140,10 +144,57 @@ L'app est réussie si :
 
 | | |
 |---|---|
-| **Relu par** | _(à compléter : prénom du binôme)_ |
-| **Date** | _(à compléter)_ |
+| **Relu par** | Zinedine |
+| **Date** | 2 octobre 2026 |
+| **Comment** | Brief envoyé par message, trois questions posées, réponses reçues par écrit |
 
-**Remarques reçues et ce que j'en ai fait :**
+### Question 1 — « En lisant juste le point 1 et le point 2, tu comprends à quoi sert l'app ? »
 
-1. _(à compléter)_
-2. _(à compléter)_
+> « Oui, l'app sert à. centraliser toute les étapes de chaque projet avec chaque client »
+> *(réponse recopiée telle quelle)*
+
+**Ce que j'en fais.** Le brief est compris, donc je ne change pas les points 1 et 2. Mais sa
+reformulation est instructive : il dit **« projet »** et **« client »**, là où j'écris partout
+**« shooting »**. Deux lectures possibles, et elles ne mènent pas au même produit :
+
+- « centraliser les étapes de chaque projet » → un outil de **gestion de projet**, qui marcherait
+  pour n'importe quel métier ;
+- « suivre chaque shooting » → un outil **de photographe**, dont le vocabulaire et les 7 étapes
+  sont ceux du métier.
+
+C'est la seconde que je veux. **Décision : je garde « shooting » partout**, et je l'ai rendu plus
+explicite au point 1. Si même un camarade glisse vers « projet », l'interface devra tenir le
+vocabulaire de Nora pour ne pas dériver.
+
+### Question 2 — « Dans la liste "ce que l'app ne fera pas", il y a un truc qui te paraît indispensable ? »
+
+> « envoyer directement des message au client »
+
+**Ce que j'en fais.** C'est la remarque la plus utile des trois, et elle vise juste : le problème
+que l'app résout, c'est que Nora **oublie de relancer**. Lui montrer qu'elle doit relancer sans lui
+donner le moyen de le faire, c'est s'arrêter au milieu du chemin.
+
+**Mais je maintiens l'exclusion pour les 4 semaines de code.** Envoyer réellement un e-mail
+demanderait un service d'envoi, une clé d'API et une gestion des échecs — c'est exactement le genre
+de morceau qui ferait exploser le périmètre, et le cours interdit de toute façon toute solution
+payante.
+
+**Le compromis que j'ajoute** : un bouton **« Copier le message de relance »** sur la fiche, qui
+prépare le texte (nom du client, date du shooting, date de livraison promise) et le met dans le
+presse-papier. Nora le colle dans son app de messagerie. Zéro envoi, zéro service externe, et le
+besoin est couvert. C'est aussi une micro-interaction de plus pour le cahier des charges.
+
+L'envoi réel est noté comme **la première chose à ajouter après le projet**.
+
+### Question 3 — « Le parcours en 3 appuis, tu le trouves réaliste ou je me mens ? »
+
+> « tout a fait realiste »
+
+**Ce que j'en fais.** Rien pour l'instant — mais je note que c'est un avis donné **en lisant le
+brief, pas en manipulant la maquette**. Ça ne vaut pas un test. Les 3 appuis seront vérifiés
+chronomètre en main pendant les tests utilisateurs, et c'est là seulement que le chiffre comptera.
+
+### Bilan de la revue
+
+Une modification du périmètre (le bouton de copie), une décision de vocabulaire confirmée, et un
+chiffre à vérifier autrement qu'à l'avis. La question 2 a changé le brief.
